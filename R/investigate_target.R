@@ -31,7 +31,7 @@ investigate_target <- function(target, input_lib, output_lib,
   libs <- c("OE", "KD", "CP")
 
   if(!input_lib %in% libs | !output_lib %in% libs) {
-    stop("Both input andd output libraries must be one of 'OE', 'KD', 'CP'")
+    stop("Both input and output libraries must be one of 'OE', 'KD', 'CP'")
   }
 
   if (missing(input_lib) | missing(output_lib)) {
@@ -69,10 +69,10 @@ investigate_target <- function(target, input_lib, output_lib,
 
   if (paired) {
     filtered_up <- all_signatures %>%
-      purrr::map(~ filter_signature(.x, direction = "up", threshold = filter_threshold))
+      purrr::map(~ filter_signature(.x, direction = "up", threshold = similarity_threshold))
 
     filtered_down <- all_signatures %>%
-      purrr::map(~ filter_signature(.x, direction = "down", threshold = filter_threshold))
+      purrr::map(~ filter_signature(.x, direction = "down", threshold = similarity_threshold))
 
     concordant_up <- filtered_up %>%
       purrr::map(~ get_concordants(.x, library = output_lib))
@@ -86,7 +86,7 @@ investigate_target <- function(target, input_lib, output_lib,
                                                              discordant = discordant))
   } else {
     filtered <- all_signatures %>%
-      purrr::map(~ filter_signature(.x, direction = "any", threshold = filter_threshold))
+      purrr::map(~ filter_signature(.x, direction = "any", threshold = similarity_threshold))
 
     concordants <- filtered %>%
       purrr::map(~ get_concordants(.x, library = output_lib))
