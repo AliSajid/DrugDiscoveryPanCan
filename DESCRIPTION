@@ -1,0 +1,22 @@
+Package: DrugDiscoveryPanCan
+Type: Package
+Title: Investigate Drug Targets for Kinase Therapies
+Version: 0.1.0.9000
+Authors@R: c(
+    person(given = c("Ali", "Sajid"),
+           family = "Imami",
+           role = c("aut", "cre"),
+           email = "Ali.Sajid.Imami@gmail.com",
+           comment = c(ORCID = "0000-0003-3684-3539")),
+    person(given = c("Justin", "Fortune"),
+           family = "Creeden",
+           role = c("aut"),
+           email = "Justin.Creeden@rockets.utoledo.edu",
+           comment = c(ORCID = "0000-0003-3123-8401"))
+           )          
+Description: This package contains the code and report for the anlaysis for the Pancreatic Cancer
+    Project at the Cognitive Disorder Research Lab (CDRL). This is a collaboration between Dr. Ali S. Imami
+    and Justin F. Creeden.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
