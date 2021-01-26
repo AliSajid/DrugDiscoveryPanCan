@@ -20,3 +20,16 @@ Description: This package contains the code and report for the anlaysis for the 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    httr,
+    jsonlite,
+    magrittr,
+    tibble,
+    rlang,
+    dplyr,
+    purrr,
+    readr,
+    stringr
