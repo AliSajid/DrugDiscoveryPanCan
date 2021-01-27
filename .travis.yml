@@ -1,0 +1,25 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+
+r:
+  - release
+  - devel
+  - bioc-devel
+  - bioc-release
+  - 4.0.3
+
+cache:
+  directories:
+  - $HOME/.local/share/renv
+  - $TRAVIS_BUILD_DIR/renv/library
+
+install:
+  - R -e "renv::restore()"
+  - R -e "install.packages(c('devtools', 'covr'))"
+
+script:
+  - R -e "devtools::check()"
+
+after_success:
+  - Rscript -e 'covr::codecov(token = "9efb79c0-930a-4d7e-b8d5-62383eee1919")'
