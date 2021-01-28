@@ -4,3 +4,5 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^raw$
+^inst/results$
+^\.travis\.yml$
