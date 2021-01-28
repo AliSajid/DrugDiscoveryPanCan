@@ -94,7 +94,8 @@ investigate_target <- function(target, input_lib, output_lib,
     consensus_targets <- purrr::map(concordants,
                                     ~ consensus_concordants(.x, paired = paired,
                                                             cell_line = output_cell_lines,
-                                                            discordant = discordant))
+                                                            discordant = discordant,
+                                                            cutoff = similarity_threshold))
   }
 
   augmented <- consensus_targets %>%
