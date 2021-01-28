@@ -37,4 +37,4 @@ l1000 <- l1000_list %>%
   select(ENTREZID, L1000, SYMBOL, ALIAS)
 
 usethis::use_data(oe_metadata, kd_metadata, cp_metadata, l1000,
-                  internal = TRUE, overwrite = TRUE)
+                  internal = TRUE, overwrite = TRUE, compress = "bzip2", version = 2)
