@@ -1,5 +1,5 @@
 library(tidyverse)
-devtools::load_all()
+library(DrugDiscoveryPanCan)
 
 target <- c("HCK", "ABL2", "FYN")
 input_lib <- c("KD")

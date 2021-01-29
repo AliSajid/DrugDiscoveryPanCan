@@ -1,5 +1,5 @@
 library(tidyverse)
-devtools::load_all()
+library(DrugDiscoveryPanCan)
 
 inputs <- list.files("~/experiments/justin-rnaseq/results/",
                      pattern = "^dge-table-\\w*-unfiltered.csv",
@@ -27,7 +27,8 @@ filenames <- s %>%
   file.path("inst", "results", .)
 
 g <- s %>%
-  mutate(expr = map(inputs, read_csv)) %>%
+  mutate(expr = map(inputs, read_csv),
+         source_name = str_extract(inputs, "P\\w+")) %>%
   select(-inputs)
 
 g %>%
